@@ -21,10 +21,11 @@ content = request.json()
 body = ""
 for article in content['articles']:
     if article['title'] and article['description']:
-        body = "Subject: Today's news" + "\n" + body + article["title"] + "\n" \
+        body = body + article["title"] + "\n" \
                 + article["description"] + "\n" \
                 + article["url"] + 2*"\n"
 
+body = "Subject: Today's news\n\n" + body
 
 body = body.encode("utf-8")
 send_email(message=body)
