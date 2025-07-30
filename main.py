@@ -23,7 +23,7 @@ for article in content['articles']:
     if article['title'] and article['description']:
         body = "Subject: Today's news" + "\n" + body + article["title"] + "\n" \
                 + article["description"] + "\n" \
-                + article["url"] +  2*"\n"
+                + article["url"] + 2*"\n"
 
 
 body = body.encode("utf-8")
